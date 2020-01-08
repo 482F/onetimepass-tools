@@ -21,7 +21,9 @@ otp_register_ok(){
         msgbox, % "name """ . name . """ is invalid. Don't include space."
         ExitApp
     }
+    clip := ClipboardAll
     CmdRun("wsl $(wslpath -u """ . A_ScriptDir . """)/register-onetimepass.sh " . otp_register.name.value . " " . otp_register.key.value . " " . otp_register.passphrase.value)
+    Clipboard := clip
     otp_register.destroy()
     ExitApp
 }
