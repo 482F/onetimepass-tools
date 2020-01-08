@@ -3,7 +3,7 @@
 ワンタイムパスワードのシークレットキーは openssl によって暗号化されてから保存されます。
 
 ### 環境
-スクリプトを使用するためには openssl を実行できる環境が必要です。    
+スクリプトを使用するためには openssl と oathtool を実行できる環境が必要です。    
 clip-onetimepass-gui と register-onetimepass-gui は ahk によって書かれていますが、コンパイル済みのものは AutoHotkey をインストールしなくても使えます。
 
 ### 使用方法
