@@ -8,10 +8,10 @@ clip-onetimepass-gui と register-onetimepass-gui は ahk によって書かれ�
 
 ### 使用方法
 - register-onetimepass.sh
-`./register-onetimepass.sh name secret_key passphrase`
+  - `./register-onetimepass.sh name secret_key passphrase`
 
 - print-onetimepass.sh
-`./print-onetimepass.sh name passphrase`
+  - `./print-onetimepass.sh name passphrase`
 
 - register-onetimepass-gui.exe
   - 起動後、name に登録名、secret key にシークレットキー、passphrase に暗号化用のパスフレーズを入力して登録します。
