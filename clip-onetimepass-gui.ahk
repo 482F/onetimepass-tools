@@ -13,7 +13,7 @@ return
 otp_input_ok(){
     global otp_input
     otp_input.submit("NoHide")
-    CmdRun("wsl $(wslpath -u """ . A_ScriptDir . """)/print-onetimepass.sh " . otp_input.name.value . " " . otp_input.passphrase.value)
+    CmdRun("wsl bash $(wslpath -u """ . A_ScriptDir . """)/print-onetimepass.sh " . otp_input.name.value . " " . otp_input.passphrase.value)
     otp_input.destroy()
     ExitApp
 }
