@@ -10,7 +10,7 @@ function main(){
     local pass_phrase="${2:-}"
     check_args "${name}" "${pass_phrase}"
     local crypted_secret_str="$(cat "${SECRET_STR_TXT}" | grep "${name}" | grep -oE "[^ ]+$")"
-    local secret_str="$(echo "${crypted_secret_str}" | openssl enc -d -des -base64 -A -k "${pass_phrase}")"
+    local secret_str="$(echo "${crypted_secret_str}" | openssl enc -d -aes-128-cbc -base64 -A -k "${pass_phrase}")"
     oathtool --totp -d 6 --time-step-size=30s --base32 "${secret_str}"
     return
 }

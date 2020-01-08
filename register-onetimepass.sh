@@ -10,7 +10,7 @@ function main(){
     local secret_str="${2:-}"
     local pass_phrase="${3:-}"
     check_args "${name}" "${secret_str}" "${pass_phrase}"
-    local crypted_secret_str="$(echo "${secret_str}" | openssl enc -e -des -base64 -A -k "${pass_phrase}")"
+    local crypted_secret_str="$(echo "${secret_str}" | openssl enc -e -aes-128-cbc -base64 -A -k "${pass_phrase}")"
     if cat "${SECRET_STR_TXT}" | grep -q "${name}"; then
         echo "name \"${name}\" is already exist. abort process."
         exit 1
